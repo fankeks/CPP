@@ -1,6 +1,6 @@
 #include <iostream>
-#include "../lib/lib.h"
-#include "../lib1/lib1.hpp"
+#include "lib.h"
+#include "lib1.hpp"
 
 
 int main(int, char**){
