@@ -2,6 +2,7 @@
 #include "Shape.h"
 #include "Rectangle.h"
 #include "Circle.h"
+#include "Parallelepiped.h"
 
 
 int main(int, char**){
@@ -28,10 +29,17 @@ int main(int, char**){
     Rectangle_ctor(&r2, 0, 1, 2, 3);
     Circle c2;
     Circle_ctor(&c2, 5, 6, 2);
+    Parallelepiped p1;
+    Parallelepiped_ctor(&p1, 1, 2, 3, 4, 5);
 
-    Shape* figures[] = {(Shape *)&r2, (Shape *)&c2};
+    Shape* figures[] = {(Shape *)&r2, (Shape *)&c2, (Shape *)&p1};
     DRAW_VCALL(figures[0]);
     DRAW_VCALL(figures[1]);
+    DRAW_VCALL(figures[2]);
+
+    std::cout << std::endl;
+    std::cout << VOLUME_VCALL(figures[0]) << std::endl;
+    std::cout << VOLUME_VCALL(figures[2]) << std::endl;
 
     system("pause");
     return 0;
