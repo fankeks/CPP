@@ -7,19 +7,16 @@ file(GLOB
      CPP_SOURCE "*.cpp")
 file(GLOB
      C_SOURCE "*.c")
-add_executable(${PROJECT_NAME} ${CPP_SOURCE} ${C_SOURCE})
+file(GLOB
+     H_SOURCE "*.h")
+add_executable(${PROJECT_NAME} ${CPP_SOURCE} ${C_SOURCE} ${H_SOURCE})
 set_target_properties(${PROJECT_NAME} PROPERTIES
                       CXX_STANDARD 11
                       CXX_STANDARD_REQUIRED ON
                       )
 
 # Линкуем
-#lib
+#config
 target_include_directories(${PROJECT_NAME} PRIVATE
-                           ${CMAKE_CURRENT_SOURCE_DIR}/../lib)
-target_link_libraries(${PROJECT_NAME} lib)
-
-#lib1
-target_include_directories(${PROJECT_NAME} PRIVATE
-                           ${CMAKE_CURRENT_SOURCE_DIR}/../lib1)
-target_link_libraries(${PROJECT_NAME} lib1)
+                           ${CMAKE_CURRENT_SOURCE_DIR}/../config)
+target_link_libraries(${PROJECT_NAME} config)

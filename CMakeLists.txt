@@ -6,8 +6,7 @@ include(CTest)
 enable_testing()
 
 
-add_subdirectory(lib)
-add_subdirectory(lib1)
+add_subdirectory(config)
 add_subdirectory(src)
 
 
